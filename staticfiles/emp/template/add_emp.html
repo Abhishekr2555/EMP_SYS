@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+<form method="POST" action="/add_emp/">
+    {% csrf_token %}
+    <div class="container">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+        </div>
+      </div>
+    </div>
+
+  
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <label for="dept">Department:</label>
+        <select id="dept" name="dept" required>
+            <option value="">Select Department</option>
+            <!-- Replace this section with the actual department options from your Django view -->
+            <option value="1">support and service</option>
+            <option value="2">Production</option>
+            <option value="3">Fincence</option>
+            <option value="4">Security</option>
+            <option value="5">HR</option>
+        </select>
+    </div>
+  
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+          <option value="">Select Role</option>
+          <!-- Replace this section with the actual role options from your Django view -->
+          <option value="1">Chief operating office</option>
+          <option value="2">Chief financial officer</option>
+          <option value="3">Chief technology officer</option>
+          <option value="4">Manager</option>
+          <option value="5">Executive member</option>
+          <option value="6">Chief executive officer</option>
+      </select>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" step="0.01" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label for="bonus">Bonus:</label>
+            <input type="number" id="bonus" name="bonus" step="0.01" required><br>
+    
+          </div>
+        </div>
+      </div>
+    
+    <div class="form-outline mb-4">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required><br>
+    </div>
+  
+    <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label for="phone" id="phone">Phone</label>
+            <input type="number"  for="phone" id="phone" name="phone" value="{{ phone }}">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label for="hire_date">Hire Date:</label>
+            <input type="date" id="hire_date" name="hire_date" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary"  href="/add_emp" type="submit">Add</button>
+      </div>
+</div>
+{% endblock 'content' %}
