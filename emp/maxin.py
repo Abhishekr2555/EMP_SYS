@@ -15,7 +15,7 @@ class messhanlder:
         client = Client(settings.ACCOUNT_SID,settings.AUTH)
         
         message = client.messages.create(
-        to="+15558675309",
-        from_="+15017250604",
+        to="123",
+        from_="456",
         body="Your OTP is {self.otp}")
 

@@ -16,9 +16,6 @@ from django.conf import settings
 from django.core import mail
 from django.core.mail import send_mail
 from django.core.mail import EmailMessage
-# -----------------------------------------------------------------------------------------------------------------------------
-
-# Create your views here.
 
 
 def home(request):
@@ -174,15 +171,15 @@ def contect(request):
         connection = mail.get_connection()
         connection.open()
         email_msg = mail.EmailMessage(f'Email From {fname}', f'UserEmail:{email}\n\nMesseage:{descrp}', from_email=[
-                                      'abhishekrathod9318@gmail.com'], connection=connection)
+                                      'name@gmail.com'], connection=connection)
         email_client = mail.EmailMessage('Svarnim Managament Teams Custmor', request.POST.get(
             'message'), from_email, [email], connection=connection)
 
         # mail.send_mail(
         #     'Customer Support Request',
         #     f'Customer Name: {fname}\nCustomer Email: {email}\nMessage: {descrp}\nCompany Website: http://www.yourcompany.com',
-        #     'abhishekrathod9318@gmail.com',
-        #     ['abhishekrathod9318@gmail.com'],
+        #     'name@gmail.com',
+        #     ['name8@gmail.com'],
         #     fail_silently=False,
         # )
 
@@ -251,9 +248,9 @@ def login1(request):
 
             # Save the generated OTP in the user's session or database for verification
 
-                account_sid = 'ACd03eb7c5f8ef08f9a9fae296ccb7a251'
-                auth_token = '2a5cb3fa8e563ceef2f93758ac837bd1'
-                twilio_mobile = '(515) 417-3527'
+                account_sid = 'xxxx'
+                auth_token = 'xxxx'
+                twilio_mobile = 'xxxx'
 
                 client = Client(account_sid, auth_token)
                 try:
@@ -304,5 +301,3 @@ def otp(request):
             return HttpResponse('Invalid OTP!')
 
     return render(request, 'otp.html')
-
-# otp solution

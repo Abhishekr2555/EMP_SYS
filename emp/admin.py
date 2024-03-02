@@ -11,4 +11,4 @@ admin.site.register(about_photo3)
 admin.site.register(Profile)
 admin.site.register(Website)
 admin.site.register(Contact)
-# Register your models here.
+
